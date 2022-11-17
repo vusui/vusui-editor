@@ -1,0 +1,39 @@
+{
+  "name": "vusui-editor",
+  "version": "0.0.2",
+  "description": "基于 Vue3 封装的 Quill 富文本编辑器组件。",
+  "main": "vusui-editor.umd.js",
+  "module": "vusui-editor.es.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./vusui-editor.es.js",
+      "require": "./vusui-editor.umd.js",
+      "types": "./index.d.ts"
+    },
+    "./style.css": {
+      "import": "./style.css",
+      "require": "./style.css"
+    }
+  },
+  "keywords": [
+    "vusui-editor",
+    "vusui",
+    "editor",
+    "quill",
+    "vue3"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "linpan(45650368@qq.com)",
+  "license": "MIT",
+  "homepage": "https://vusui.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vusui/vusui-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vusui/vusui-editor/issues"
+  }
+}
