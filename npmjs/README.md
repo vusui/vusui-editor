@@ -39,6 +39,8 @@ export default {
 import { VusuiEditor, Quill } from 'vusui-editor';
 
 import CustomModule from 'CustomModule';
+
+// Quill 使用方法请参考Quill官方文档
 Quill.register('modules/CustomModule', CustomModule);
 app.use(VusuiEditor);
 ```
@@ -60,6 +62,7 @@ app.use(VusuiEditor);
 
 <script setup lang="ts">
 import { reactive } from 'vue';
+// 局部注册(全局注册时不需要单独引入)
 import { VusuiEditor } from 'vusui-editor';
 
 const editor = reactive({
