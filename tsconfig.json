@@ -7,12 +7,20 @@
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/components/index.js"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -2,6 +2,11 @@
 
 ## 介绍
 
+[![vue](https://img.shields.io/badge/vue-3.2.37-brightgreen.svg)](https://cn.vuejs.org/)
+[![quill](https://img.shields.io/badge/quill-1.3.7-brightgreen.svg)](https://quilljs.com/)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/vusui/vusui-admin-template/blob/main/LICENSE)
+[![vusui-editor](https://img.shields.io/github/stars/vusui/vusui-editor.svg?style=social&label=Stars)](https://github.com/vusui/vusui-editor)
+
 vusui-editor 是基于 Vue3 封装的 Quill 富文本编辑器组件。
 
 - [使用文档](https://www.vusuil.com/editor)
@@ -94,3 +99,9 @@ const onEditorChange = ({ quill, html, text }) => {
 }
 </script>
 ```
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2017-present, Vusui

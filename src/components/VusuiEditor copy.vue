@@ -90,13 +90,21 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
+  // 编辑器高度
+  height: {
+    type: Number,
+    default: 400
+  },
   // 拖拽高度
   drag: {
     type: Boolean,
     default: true
   },
   // 编辑器内容
-  content: String
+  content: {
+    type: String,
+    default: ''
+  }
 });
 
 // emit
@@ -334,7 +342,12 @@ defineExpose({
 
 <template>
   <div class="vusui-editor">
-    <div ref="VusuiEditor" class="vusui-editor-container" v-bind="$attrs"></div>
+    <div
+      ref="VusuiEditor"
+      class="vusui-editor-container"
+      :style="{ height: height + 'px' }"
+      v-bind="$attrs"
+    ></div>
     <div
       ref="VusuiEditorDrag"
       class="vusui-editor-drag"

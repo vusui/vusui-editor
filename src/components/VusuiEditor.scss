@@ -4,11 +4,18 @@
   .vusui-editor-container {
     margin: 0;
     width: 100%;
-    height: 400px;
     min-height: 100px;
   }
 
   .ql-toolbar {
+    line-height: 1;
+
+    // 下拉选择菜单行高
+    .ql-picker-label::before,
+    .ql-picker-item::before {
+      line-height: 22px !important;
+    }
+
     // 标题样式
     .ql-picker.ql-header {
       .ql-picker-label::before,
@@ -170,7 +177,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: relative;
 
   .drag-arrow {
     width: 0;
@@ -194,4 +200,10 @@
     height: 1px;
     background-color: #aaa;
   }
+}
+
+// 隐藏边框
+.ql-bubble + .vusui-editor-drag {
+  border: 0;
+  background-color: rgba(150, 150, 150, 0.1);
 }
