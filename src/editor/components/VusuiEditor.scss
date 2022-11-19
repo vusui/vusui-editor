@@ -1,3 +1,20 @@
+/*
+ * @Description: VusuiEditor样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-17 21:32:56
+ * @LastEditors: vusui gophp@163.com
+ * @LastEditTime: 2022-11-19 19:45:11
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+:root {
+  --ve-border-color: #ccc;
+  --ve-drag-arrow-color: rgba(100, 100, 100, 0.6);
+  --ve-drag-bg-color: rgba(150, 150, 150, 0.1);
+  --ve-bg-color: #fff;
+}
+
 .vusui-editor {
   position: relative;
 
@@ -8,13 +25,8 @@
   }
 
   .ql-toolbar {
+    // 防止其他样式影响工具栏行高
     line-height: 1;
-
-    // 下拉选择菜单行高
-    .ql-picker-label::before,
-    .ql-picker-item::before {
-      line-height: 22px !important;
-    }
 
     // 标题样式
     .ql-picker.ql-header {
@@ -151,26 +163,42 @@
     }
   }
 
-  .ql-tooltip[data-mode='link']::before {
-    content: '请输入链接地址:';
-  }
-  .ql-tooltip.ql-editing a.ql-action::after {
-    border-right: 0px;
-    content: '保存';
-    padding-right: 5px;
-  }
-  .ql-tooltip[data-mode='video']::before {
-    content: '请输入视频地址:';
-  }
-  .ql-tooltip input[type='text'] {
-    width: 260px;
+  .ql-snow {
+    .ql-tooltip[data-mode='link']::before {
+      content: '请输入链接地址:';
+    }
+    .ql-tooltip.ql-editing a.ql-action::after {
+      content: '保存';
+      border-right: 0px;
+      padding-right: 5px;
+    }
+    .ql-tooltip[data-mode='video']::before {
+      content: '请输入视频地址:';
+    }
+    .ql-tooltip input[type='text'] {
+      width: 260px;
+    }
+
+    .ql-tooltip {
+      &::before {
+        content: '链接地址:';
+      }
+
+      .ql-action::after {
+        content: '编辑';
+      }
+
+      .ql-remove::before {
+        content: '删除';
+      }
+    }
   }
 }
 
 // 拖拽条
 .vusui-editor-drag {
   height: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--ve-border-color);
   border-top: 0;
   cursor: s-resize;
   display: flex;
@@ -187,23 +215,83 @@
     border: 2px solid transparent;
 
     &.top {
-      border-bottom-color: #666;
+      border-bottom-color: var(--ve-drag-arrow-color);
     }
 
     &.bottom {
-      border-top-color: #666;
+      border-top-color: var(--ve-drag-arrow-color);
     }
   }
 
   .drag-line {
     width: 14px;
     height: 1px;
-    background-color: #aaa;
+    background-color: var(--ve-drag-arrow-color);
   }
 }
 
 // 隐藏边框
 .ql-bubble + .vusui-editor-drag {
   border: 0;
-  background-color: rgba(150, 150, 150, 0.1);
+  background-color: var(--ve-drag-bg-color);
+}
+
+// 夜间模式
+html.dark {
+  .vusui-editor {
+    --ve-border-color: #4c4d4f;
+    --ve-bg-color: #333;
+    --ve-color: #c3c5c9;
+    --ve-color-hover: #06c;
+    --ve-drag-bg-color: rgba(88, 88, 88, 0.1);
+
+    .ql-snow {
+      &.ql-toolbar,
+      &.ql-container {
+        border-color: var(--ve-border-color);
+      }
+
+      .ql-picker-options {
+        background-color: var(--ve-bg-color);
+      }
+
+      &.ql-toolbar {
+        .ql-picker .ql-picker-options {
+          border-color: var(--ve-border-color);
+        }
+      }
+
+      .ql-editing {
+        color: var(--ve-color);
+        border-color: var(--ve-border-color);
+        background-color: var(--ve-bg-color);
+        box-shadow: 0px 0px 5px var(--ve-border-color);
+      }
+
+      .ql-picker {
+        .ql-picker-item {
+          color: var(--ve-color);
+        }
+        .ql-picker-item:hover {
+          color: var(--ve-color-hover);
+        }
+      }
+
+      .ql-tooltip {
+        border-color: var(--ve-border-color);
+        background-color: var(--ve-bg-color);
+        box-shadow: 0px 0px 5px var(--ve-border-color);
+        color: var(--ve-color);
+      }
+    }
+
+    .ql-editor {
+      color: var(--ve-color);
+    }
+
+    .ql-bubble + .vusui-editor-drag {
+      border: 0;
+      background-color: var(--ve-drag-bg-color);
+    }
+  }
 }

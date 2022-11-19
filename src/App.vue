@@ -1,23 +1,50 @@
 <script setup lang="ts">
-const content = '1111111111111111111';
-const toolbarOptions = {
-  // modules: {
-  //   toolbar: {
-  //     // container: [
-  //     //   // [{ header: 1 }, { header: 2 }],
-  //     //   // ['bold', 'italic', 'underline'],
-  //     //   // [{ list: 'ordered' }, { list: 'bullet' }, { align: [] }]
-  //     // ]
-  //     // handlers: {
-  //     //   image: null
-  //     // }
-  //   }
-  // }
-};
+import { ref } from 'vue';
+// import { VusuiEditor } from 'vusui-editor-demo';
+// import 'vusui-editor-demo/lib/style.css';
+// import { VusuiEditor, Quill } from './editor';
+
+// // 设置字体大小
+// const fontSizeStyle = Quill.import('attributors/style/size'); // 引入这个后会把样式写在style上
+// // 设置字体列表, false为默认选中
+// fontSizeStyle.whitelist = ['12px', false, '16px'];
+// Quill.register(fontSizeStyle, true);
+
+// // 设置字体样式
+// const Font = Quill.import('attributors/style/font'); // 引入这个后会把样式写在style上
+// const fonts = ['SimSun', 'SimHei', false];
+// Font.whitelist = fonts; // 将字体加入到白名单
+// Quill.register(Font, true);
+
+const editor = ref<any>(null);
+
+// const options = ref<any>({
+//   // debug: 'info',
+//   modules: {
+//     toolbar: [
+//       [{ header: 1 }, { header: 2 }],
+//       ['bold', 'italic', 'underline'],
+//       [{ list: 'ordered' }, { list: 'bullet' }, { align: [] }],
+//       [{ size: fontSizeStyle.whitelist }],
+//       [{ font: fonts }]
+//     ]
+//   }
+// });
+
+// delta
+// const content = {
+//   ops: [
+//     { insert: 'Hello ' },
+//     { insert: 'Vusui!', attributes: { bold: true } },
+//     { insert: '\n' }
+//   ]
+// };
+
+const content = `你好, Vusui`;
 </script>
 
 <template>
-  <VusuiEditor :content="content"></VusuiEditor>
+  <vusui-editor ref="editor" v-model:content="content"></vusui-editor>
 </template>
 
 <style scoped></style>

@@ -2,12 +2,14 @@
  * @Description: 工具栏定制与类型
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-18 17:26:36
- * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-18 17:52:36
+ * @LastEditors: vusui gophp@163.com
+ * @LastEditTime: 2022-11-19 20:04:19
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
  */
+import { sizes, fonts } from './modules';
+
 // 定义类型
 export type ToolbarOptions = typeof toolbarOptions;
 
@@ -21,7 +23,7 @@ export const toolbarOptions = {
     ['blockquote', 'code-block', 'link'],
     [{ color: [] }, 'clean']
   ],
-  // 简单功能
+  // 精简功能
   minimal: [
     [{ header: 1 }, { header: 2 }],
     ['bold', 'italic', 'underline'],
@@ -36,9 +38,9 @@ export const toolbarOptions = {
     [{ script: 'sub' }, { script: 'super' }],
     [{ indent: '-1' }, { indent: '+1' }],
     [{ direction: 'rtl' }],
-    [{ size: ['small', false, 'large', 'huge'] }],
+    [{ size: sizes }],
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
-    [{ font: [] }],
+    [{ font: fonts }],
     [{ color: [] }, { background: [] }],
     [{ align: [] }],
     ['clean'],

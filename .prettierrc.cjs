@@ -2,8 +2,8 @@
  * @Description: prettier配置
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-08-18 09:50:54
- * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-17 10:20:52
+ * @LastEditors: vusui gophp@163.com
+ * @LastEditTime: 2022-11-19 11:06:40
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
