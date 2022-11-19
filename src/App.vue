@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-// import { VusuiEditor } from 'vusui-editor-demo';
-// import 'vusui-editor-demo/lib/style.css';
-// import { VusuiEditor, Quill } from './editor';
+// import { VusuiEditor } from '@vusui/editor';
+// import '@vusui/editor/lib/style.css';
+import { VusuiEditor } from './editor';
 
 // // 设置字体大小
 // const fontSizeStyle = Quill.import('attributors/style/size'); // 引入这个后会把样式写在style上
@@ -31,7 +31,7 @@ const editor = ref<any>(null);
 //   }
 // });
 
-// delta
+// delta content-type="delta"
 // const content = {
 //   ops: [
 //     { insert: 'Hello ' },
@@ -41,10 +41,18 @@ const editor = ref<any>(null);
 // };
 
 const content = `你好, Vusui`;
+
+const focus = (val: any) => {
+  console.log(val);
+};
 </script>
 
 <template>
-  <vusui-editor ref="editor" v-model:content="content"></vusui-editor>
+  <vusui-editor ref="editor" @focus="focus"></vusui-editor>
 </template>
 
-<style scoped></style>
+<style>
+body {
+  /* background: #141414; */
+}
+</style>

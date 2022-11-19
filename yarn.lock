@@ -180,6 +180,14 @@
   resolved "https://registry.npmmirror.com/@vue/shared/-/shared-3.2.45.tgz#a3fffa7489eafff38d984e23d0236e230c818bc2"
   integrity sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==
 
+"@vusui/editor@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/@vusui/editor/-/editor-0.0.1.tgz#a4ef4c8961db5f2aa5002d41111c1e4f37c65d24"
+  integrity sha512-zyTcb9eQWU41T/m2mnV8hDtMNTaMGy66IPD9HM2BMbVzPtFvW5x3slVUYRSruYE80iR2rtqPeQ3qs8wiE6Mveg==
+  dependencies:
+    quill "^1.3.7"
+    quill-delta "^5.0.0"
+
 anymatch@~3.1.2:
   version "3.1.2"
   resolved "https://registry.npmmirror.com/anymatch/-/anymatch-3.1.2.tgz#c0557c096af32f106198f4f4e2a383537e378716"
@@ -754,14 +762,6 @@ vue@^3.2.37:
     "@vue/runtime-dom" "3.2.45"
     "@vue/server-renderer" "3.2.45"
     "@vue/shared" "3.2.45"
-
-vusui-editor-demo@^0.0.1-beta12:
-  version "0.0.1-beta12"
-  resolved "https://registry.npmjs.org/vusui-editor-demo/-/vusui-editor-demo-0.0.1-beta12.tgz#3134e519fc399b0ff7eab2edc7a016535bc8af65"
-  integrity sha512-qclSK/oTSuU579puR6D83SCML10KyS7la6SnsUhrkmJ6pEnMZEDLon4TUiAZZRrZHWIVuCvGfKnCg+eZr06VWg==
-  dependencies:
-    quill "^1.3.7"
-    quill-delta "^5.0.0"
 
 yallist@^4.0.0:
   version "4.0.0"

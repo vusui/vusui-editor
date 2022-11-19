@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-17 21:32:56
  * @LastEditors: vusui gophp@163.com
- * @LastEditTime: 2022-11-19 19:45:11
+ * @LastEditTime: 2022-11-19 22:21:17
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -256,8 +256,11 @@ html.dark {
       }
 
       &.ql-toolbar {
-        .ql-picker .ql-picker-options {
-          border-color: var(--ve-border-color);
+        .ql-picker {
+          &.ql-expanded .ql-picker-label,
+          .ql-picker-options {
+            border-color: var(--ve-border-color);
+          }
         }
       }
 

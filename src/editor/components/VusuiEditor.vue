@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-18 23:50:12
  * @LastEditors: vusui gophp@163.com
- * @LastEditTime: 2022-11-19 20:53:44
+ * @LastEditTime: 2022-11-19 22:07:01
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -32,7 +32,7 @@ const props = defineProps({
   // 编辑器内容
   content: {
     type: [String, Object] as PropType<string | Delta>,
-    default: () => {}
+    default: ''
   },
   // 编辑器内容类型
   contentType: {

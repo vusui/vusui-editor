@@ -8705,8 +8705,7 @@ const mr = { class: "vusui-editor" }, br = /* @__PURE__ */ Ue("i", { class: "dra
   props: {
     content: {
       type: [String, Object],
-      default: () => {
-      }
+      default: ""
     },
     contentType: {
       type: String,
