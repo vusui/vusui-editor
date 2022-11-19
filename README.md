@@ -24,6 +24,8 @@ npm i @vusui/editor -S
 ```ts
 // main.ts
 import { VusuiEditor } from '@vusui/editor';
+import '@vusui/editor/lib/style.css';
+
 app.use(VusuiEditor);
 
 // 或者
@@ -35,6 +37,7 @@ app.use(Editor.VusuiEditor);
 
 ```ts
 import { VusuiEditor } from '@vusui/editor';
+import '@vusui/editor/lib/style.css';
 
 export default {
   components: {
