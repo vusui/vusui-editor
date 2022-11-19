@@ -1,8 +1,8 @@
 {
   "name": "@vusui/editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
-  "description": "基于 Vue3 封装的 Quill 富文本编辑器组件。",
+  "description": "基于 Vue3 + Quill 封装的富文本编辑器组件。",
   "main": "index.js",
   "module": "lib/vusui-editor.es.js",
   "unpkg": "lib/vusui-editor.umd.js",

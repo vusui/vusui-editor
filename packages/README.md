@@ -9,8 +9,7 @@
 
 基于 Vue3 + Quill 封装的富文本编辑器组件。
 
-- [使用文档](https://www.vusuil.com/editor)
-- [在线演示](https://www.vusui.com/editor/guide/demo.html)
+【[使用文档](https://www.vusui.com/editor)】|【[在线演示](https://www.vusui.com/editor/guide/demo.html)】
 
 ## 安装
 
