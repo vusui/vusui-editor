@@ -41,14 +41,10 @@ const editor = ref<any>(null);
 // };
 
 const content = `你好, Vusui`;
-
-const focus = (val: any) => {
-  console.log(val);
-};
 </script>
 
 <template>
-  <vusui-editor ref="editor" @focus="focus"></vusui-editor>
+  <vusui-editor ref="editor"></vusui-editor>
 </template>
 
 <style>

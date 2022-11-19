@@ -1,6 +1,6 @@
 {
   "name": "@vusui/editor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "description": "基于 Vue3 + Quill 封装的富文本编辑器组件。",
   "main": "index.js",
@@ -25,6 +25,7 @@
     "quill",
     "vue3",
     "RichText",
+    "编辑器",
     "文本编辑器",
     "副文本编辑器"
   ],
