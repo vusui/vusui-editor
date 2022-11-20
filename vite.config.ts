@@ -18,7 +18,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve('src/editor/index.ts'),
-      name: 'vusui-editor',
+      name: 'Vusui', // UMD 包实例名称
       fileName: (format) => `vusui-editor.${format}.js`
     },
     outDir,

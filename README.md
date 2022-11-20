@@ -26,10 +26,6 @@ import { VusuiEditor } from '@vusui/editor';
 import '@vusui/editor/lib/style.css';
 
 app.use(VusuiEditor);
-
-// 或者
-import Editor from '@vusui/editor';
-app.use(Editor.VusuiEditor);
 ```
 
 ## 局部注册
