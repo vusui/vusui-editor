@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-18 23:50:12
  * @LastEditors: vusui gophp@163.com
- * @LastEditTime: 2022-11-19 22:07:01
+ * @LastEditTime: 2022-11-20 16:08:50
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -15,7 +15,7 @@ export default {
 </script>
 <script setup lang="ts">
 import { ref, watch, nextTick, PropType, onMounted, onUnmounted } from 'vue';
-import Quill from 'quill';
+import Quill, { QuillOptionsStatic, RangeStatic, Sources } from 'quill';
 import Delta from 'quill-delta';
 // 工具栏
 import { toolbarOptions, ToolbarOptions } from './options';
@@ -85,7 +85,7 @@ const props = defineProps({
   },
   // 配置参数
   options: {
-    type: Object,
+    type: Object as PropType<QuillOptionsStatic>,
     required: false
   },
   // 编辑器默认高度
@@ -104,17 +104,16 @@ const props = defineProps({
 const emit = defineEmits([
   'textChange',
   'selectionChange',
-  'change',
+  'editorChange',
   'ready',
-  'input',
-  'blur',
   'focus',
+  'blur',
   'update:content'
 ]);
 
 // editor 实例
-const editor = ref<any>();
-const editorDrag = ref<any>();
+const editor = ref<any>(null);
+const editorDrag = ref<any>(null);
 
 // 编辑焦点事件
 const editorFocus = ref<boolean>(false);
@@ -245,7 +244,7 @@ const initialize = () => {
   // 设置事件处理
   state.quill.on('text-change', handleTextChange);
   state.quill.on('selection-change', handleSelectionChange);
-  state.quill.on('change', handleEditorChange);
+  state.quill.on('editor-change', handleEditorChange);
 
   // 当主题更改时，删除编辑器类
   if (props.theme !== 'bubble') {
@@ -270,7 +269,7 @@ const initialize = () => {
 const handleTextChange: any = (
   delta: Delta,
   oldContents: Delta,
-  source: any
+  source: Sources
 ) => {
   // 内容更新
   emit('update:content', getContents());
@@ -278,7 +277,11 @@ const handleTextChange: any = (
 };
 
 // 处理选择变化
-const handleSelectionChange: any = (range: any, oldRange: any, source: any) => {
+const handleSelectionChange: any = (
+  range: RangeStatic,
+  oldRange: RangeStatic,
+  source: Sources
+) => {
   editorFocus.value = state.quill?.hasFocus() ? !0 : !1;
   emit('selectionChange', { range, oldRange, source });
 };
@@ -286,18 +289,23 @@ const handleSelectionChange: any = (range: any, oldRange: any, source: any) => {
 // 处理编辑器变化
 const handleEditorChange: any = (
   ...args:
-    | [name: 'text-change', delta: Delta, oldContents: Delta, source: any]
-    | [name: 'selection-change', range: any, oldRange: any, source: any]
+    | [name: 'text-change', delta: Delta, oldContents: Delta, source: Sources]
+    | [
+        name: 'selection-change',
+        range: RangeStatic,
+        oldRange: RangeStatic,
+        source: Sources
+      ]
 ) => {
   if (args[0] === 'text-change')
-    emit('change', {
+    emit('editorChange', {
       name: args[0],
       delta: args[1],
       oldContents: args[2],
       source: args[3]
     });
   if (args[0] === 'selection-change')
-    emit('change', {
+    emit('editorChange', {
       name: args[0],
       range: args[1],
       oldRange: args[2],
@@ -335,7 +343,7 @@ const getContents = (index?: number, length?: number) => {
 };
 
 // 设置编辑器内容
-const setContents = (content: string | Delta, source: any = 'api') => {
+const setContents = (content: string | Delta, source: Sources = 'api') => {
   if (props.contentType === 'html') {
     setHTML(content as string);
   } else if (props.contentType === 'text') {
@@ -351,7 +359,7 @@ const getText = (index?: number, length?: number): string => {
 };
 
 // 设置文本内容
-const setText = (text: string, source: any = 'api') => {
+const setText = (text: string, source: Sources = 'api') => {
   state.quill?.setText(text, source);
 };
 
@@ -368,7 +376,7 @@ const setHTML = (html: string) => {
 };
 
 // 粘贴HTML内容
-const pasteHTML = (html: string, source: any = 'api') => {
+const pasteHTML = (html: string, source: Sources = 'api') => {
   const delta = state.quill?.clipboard.convert(html as {});
   if (delta) {
     state.quill?.setContents(delta, source);

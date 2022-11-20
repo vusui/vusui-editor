@@ -8754,15 +8754,14 @@ const mr = { class: "vusui-editor" }, br = /* @__PURE__ */ Ue("i", { class: "dra
   emits: [
     "textChange",
     "selectionChange",
-    "change",
+    "editorChange",
     "ready",
-    "input",
-    "blur",
     "focus",
+    "blur",
     "update:content"
   ],
   setup(B, { expose: Y, emit: x }) {
-    const v = B, d = xn(), k = xn(), E = xn(!1), m = {
+    const v = B, d = xn(null), k = xn(null), E = xn(!1), m = {
       options: {},
       quill: null
     }, p = {
@@ -8818,7 +8817,7 @@ const mr = { class: "vusui-editor" }, br = /* @__PURE__ */ Ue("i", { class: "dra
             Vt.register(`modules/${X.name}`, X.module);
         else
           Vt.register(`modules/${v.modules.name}`, v.modules.module);
-      m.quill = new Vt(d.value, m.options), f(v.content), m.quill.on("text-change", t), m.quill.on("selection-change", e), m.quill.on("change", u), v.theme !== "bubble" && ((P = (O = d.value) == null ? void 0 : O.classList) == null || P.remove("ql-bubble")), v.theme !== "snow" && ((U = (j = d.value) == null ? void 0 : j.classList) == null || U.remove("ql-snow")), (z = m.quill.getModule("toolbar")) == null || z.container.addEventListener("mousedown", (X) => {
+      m.quill = new Vt(d.value, m.options), f(v.content), m.quill.on("text-change", t), m.quill.on("selection-change", e), m.quill.on("editor-change", u), v.theme !== "bubble" && ((P = (O = d.value) == null ? void 0 : O.classList) == null || P.remove("ql-bubble")), v.theme !== "snow" && ((U = (j = d.value) == null ? void 0 : j.classList) == null || U.remove("ql-snow")), (z = m.quill.getModule("toolbar")) == null || z.container.addEventListener("mousedown", (X) => {
         X.preventDefault();
       }), x("ready", m.quill);
     }, t = (O, P, j) => {
@@ -8827,12 +8826,12 @@ const mr = { class: "vusui-editor" }, br = /* @__PURE__ */ Ue("i", { class: "dra
       var U;
       E.value = !!((U = m.quill) != null && U.hasFocus()), x("selectionChange", { range: O, oldRange: P, source: j });
     }, u = (...O) => {
-      O[0] === "text-change" && x("change", {
+      O[0] === "text-change" && x("editorChange", {
         name: O[0],
         delta: O[1],
         oldContents: O[2],
         source: O[3]
-      }), O[0] === "selection-change" && x("change", {
+      }), O[0] === "selection-change" && x("editorChange", {
         name: O[0],
         range: O[1],
         oldRange: O[2],

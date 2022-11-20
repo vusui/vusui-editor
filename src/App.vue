@@ -44,7 +44,7 @@ const content = `你好, Vusui`;
 </script>
 
 <template>
-  <vusui-editor ref="editor"></vusui-editor>
+  <vusui-editor ref="editor" v-model:content="content"></vusui-editor>
 </template>
 
 <style>
