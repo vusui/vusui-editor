@@ -2,8 +2,8 @@
  * @Description: 工具栏定制与类型
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-18 17:26:36
- * @LastEditors: vusui gophp@163.com
- * @LastEditTime: 2022-11-19 20:04:19
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-21 09:46:58
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！

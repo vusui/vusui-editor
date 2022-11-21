@@ -2,8 +2,8 @@
  * @Description: VusuiEditor编辑组件
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-18 23:50:12
- * @LastEditors: vusui gophp@163.com
- * @LastEditTime: 2022-11-20 16:08:50
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-21 09:43:45
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
