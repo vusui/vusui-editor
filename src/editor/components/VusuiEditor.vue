@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-18 23:50:12
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-21 09:43:45
+ * @LastEditTime: 2022-11-22 09:43:21
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -318,6 +318,11 @@ const getEditor = (): Element => {
   return editor.value as Element;
 };
 
+// 获取拖拽元素
+const getEditorDrag = (): Element => {
+  return editorDrag.value as Element;
+};
+
 // 获取工具栏
 const getToolbar = (): Element => {
   return state.quill?.getModule('toolbar')?.container;
@@ -481,6 +486,7 @@ defineExpose({
   editorDrag,
   reinit,
   getEditor,
+  getEditorDrag,
   getToolbar,
   getQuill,
   getContents,
